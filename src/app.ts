@@ -3,6 +3,8 @@ import morgan from "morgan";
 import cors from "cors";
 
 
+import authRoutes from "./routes/auth.routes";
+
 
 
 const app = express();
@@ -18,10 +20,8 @@ app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 
 //routes
-app.get('/', (req, res) => {
+app.get('/', (req, res) => {res.send('Hello')})
+app.use(authRoutes);
 
-    res.send('Hello')
-
-})
 
 export default app;
